@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 1503929043}
   - component: {fileID: 1503929042}
   m_Layer: 0
-  m_Name: Scene Loader
+  m_Name: man_Scene Loader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 1767092692}
   - component: {fileID: 1767092691}
   m_Layer: 5
-  m_Name: Text
+  m_Name: txt_NextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 1924844574}
   - component: {fileID: 1924844573}
   m_Layer: 0
-  m_Name: Gameplay
+  m_Name: man_Gameplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 1937004254}
   - component: {fileID: 1937004253}
   m_Layer: 5
-  m_Name: Button
+  m_Name: btn_NextLevelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
