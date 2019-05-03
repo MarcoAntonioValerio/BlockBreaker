@@ -7,6 +7,8 @@ public class scp_Ball : MonoBehaviour
 {
     // Config Parameters
     [SerializeField] scp_PaddleController paddle_1;
+    [SerializeField] float xPush = 2f;
+    [SerializeField] float yPush = 15f;
 
     // States
     Vector2 paddleToBallVector;
@@ -21,22 +23,20 @@ public class scp_Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        if (gameHasStarted == false)
+        if (!gameHasStarted)
         {
             BallStartingPosition();
+            LaunchOnMouseClick();
         }       
-        LaunchOnMouseClick();
+        
     }
 
     private void LaunchOnMouseClick()
     {
         if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("Mouse clicked");
+        {            
             gameHasStarted = true;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(2f, 15f);
-            
-
+            GetComponent<Rigidbody2D>().velocity = new Vector2(xPush, yPush);            
         }
     }
 
@@ -44,5 +44,5 @@ public class scp_Ball : MonoBehaviour
     {
         Vector2 paddlePos = new Vector2(paddle_1.transform.position.x, paddle_1.transform.position.y);
         transform.position = paddlePos + paddleToBallVector;
-    }
+    }    
 }
