@@ -43,7 +43,7 @@ public class scp_test : MonoBehaviour
     {
         if (++ballsNumber == playersNumber)
         {
-            preIncrementMessage = "It increments before, making EQUAL to the playersNumber.";
+            preIncrementMessage = "It increments before, making it EQUAL to the playersNumber.";
             preIncrement = true;
         }
         
