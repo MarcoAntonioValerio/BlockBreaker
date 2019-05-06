@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class scp_LooseCollider : MonoBehaviour
 {
+    [SerializeField] scp_SceneLoader sceneLoaderObject;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        SceneManager.LoadScene("scn_03_GameOver", LoadSceneMode.Single);
+        sceneLoaderObject.LoadNextScene();
     }
 }
