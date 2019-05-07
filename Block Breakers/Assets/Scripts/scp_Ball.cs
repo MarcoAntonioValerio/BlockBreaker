@@ -8,7 +8,8 @@ public class scp_Ball : MonoBehaviour
 {
     // Config Parameters
     [SerializeField] scp_PaddleController paddle_1;
-    [SerializeField] scp_ScreenShake shaker;
+    
+    
 
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 15f;
@@ -17,6 +18,7 @@ public class scp_Ball : MonoBehaviour
     Vector2 paddleToBallVector;
     bool gameHasStarted = false;
     private AudioSource audioSource;
+    public bool hasCollidedWithBrick = false;
     
 
     // Start is called before the first frame update
@@ -55,11 +57,14 @@ public class scp_Ball : MonoBehaviour
     {
         if (gameHasStarted)
         {
-            AudioPlayer();
-            StartCoroutine(shaker.ShakeIt(0.015f, 0.04f));
+            hasCollidedWithBrick = true;
+            AudioPlayer();            
         }
     }
-
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        hasCollidedWithBrick = false;
+    }
     private void AudioPlayer()
     {
         //Get the AudioSource
