@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class scp_Ball : MonoBehaviour
 {
     // Config Parameters
@@ -13,6 +14,8 @@ public class scp_Ball : MonoBehaviour
     // States
     Vector2 paddleToBallVector;
     bool gameHasStarted = false;
+    private AudioSource audioSource;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -44,5 +47,25 @@ public class scp_Ball : MonoBehaviour
     {
         Vector2 paddlePos = new Vector2(paddle_1.transform.position.x, paddle_1.transform.position.y);
         transform.position = paddlePos + paddleToBallVector;
-    }    
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (gameHasStarted)
+        {
+            AudioPlayer();         
+        }
+    }
+
+    private void AudioPlayer()
+    {
+        //Get the AudioSource
+        audioSource = GetComponent<AudioSource>();
+        //Change the pitch of the sound on a Random Range between 0.1/1
+        audioSource.pitch = (UnityEngine.Random.Range(0.1f, 1f));
+        //Play the sounds
+        audioSource.Play();
+    }
+
+
 }
