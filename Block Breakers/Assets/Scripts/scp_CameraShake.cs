@@ -28,7 +28,7 @@ public class scp_CameraShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Trigger
+        //Trigger - you can change it to what you want to activate the screenshake
         if (ballObject.hasCollidedWithBrick == true)
         {
             shakeElapsedTime = shakeDuration;
