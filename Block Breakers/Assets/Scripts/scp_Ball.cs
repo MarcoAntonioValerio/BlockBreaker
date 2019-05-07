@@ -8,6 +8,8 @@ public class scp_Ball : MonoBehaviour
 {
     // Config Parameters
     [SerializeField] scp_PaddleController paddle_1;
+    [SerializeField] scp_ScreenShake shaker;
+
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 15f;
 
@@ -53,7 +55,8 @@ public class scp_Ball : MonoBehaviour
     {
         if (gameHasStarted)
         {
-            AudioPlayer();         
+            AudioPlayer();
+            StartCoroutine(shaker.ShakeIt(0.015f, 0.04f));
         }
     }
 
