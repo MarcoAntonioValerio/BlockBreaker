@@ -3035,6 +3035,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8968794790770273889, guid: cea7176ab405b53408fe81c12060e7c7,
         type: 3}
+      propertyPath: ballArray.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968794790770273889, guid: cea7176ab405b53408fe81c12060e7c7,
+        type: 3}
       propertyPath: paddle_1
       value: 
       objectReference: {fileID: 313166509}
@@ -3043,6 +3048,26 @@ PrefabInstance:
       propertyPath: shaker
       value: 
       objectReference: {fileID: 739582022}
+    - target: {fileID: 8968794790770273889, guid: cea7176ab405b53408fe81c12060e7c7,
+        type: 3}
+      propertyPath: ballArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: c0849f509ef0aa2458ed4bf62ba6d6f4, type: 3}
+    - target: {fileID: 8968794790770273889, guid: cea7176ab405b53408fe81c12060e7c7,
+        type: 3}
+      propertyPath: ballArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9dac8a7a72583da4588fcc17ee332e0e, type: 3}
+    - target: {fileID: 8968794790770273889, guid: cea7176ab405b53408fe81c12060e7c7,
+        type: 3}
+      propertyPath: ballArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 04725fb84d7290944aeae61bd4d7ad78, type: 3}
+    - target: {fileID: 8968794790770273889, guid: cea7176ab405b53408fe81c12060e7c7,
+        type: 3}
+      propertyPath: hasCollidedWithBrick
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8968794790770273916, guid: cea7176ab405b53408fe81c12060e7c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3097,6 +3122,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198325131, guid: cea7176ab405b53408fe81c12060e7c7, type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8968794790770273888, guid: cea7176ab405b53408fe81c12060e7c7, type: 3}

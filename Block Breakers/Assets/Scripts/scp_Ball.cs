@@ -8,15 +8,20 @@ public class scp_Ball : MonoBehaviour
 {
     // Config Parameters
     [SerializeField] scp_PaddleController paddle_1;
+    [SerializeField] scp_Block blocks;
+
     [SerializeField] AudioClip[] ballArray;
+
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 15f;
+    
 
     // States
-    Vector2 paddleToBallVector;
-    bool gameHasStarted = false;
+    private Vector2 paddleToBallVector;
+    private bool gameHasStarted = false;
     private AudioSource audioSource;
     private TrailRenderer trail;
+
     public bool hasCollidedWithBrick = false;
     
 
@@ -28,11 +33,15 @@ public class scp_Ball : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {  
+    {
         if (!gameHasStarted)
         {
             BallStartingPosition();
             LaunchOnMouseClick();
+        }
+        else if (gameHasStarted)
+        {
+            CollideWithBricks();
         }
         trailMethod();
     }
@@ -52,14 +61,14 @@ public class scp_Ball : MonoBehaviour
         transform.position = paddlePos + paddleToBallVector;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void CollideWithBricks()
     {
-        if (gameHasStarted)
+        Debug.Log("CollideWithBricks() is firing");
+        if (blocks.hasCollidedWithBrick == true)
         {
-            hasCollidedWithBrick = true;
             AudioPlayer();
-            
         }
+        hasCollidedWithBrick = false;
     }
     
     private void AudioPlayer()
@@ -67,7 +76,7 @@ public class scp_Ball : MonoBehaviour
         //Get the AudioSource
         audioSource = GetComponent<AudioSource>();
 
-        //GetClips
+        //Switch between clips randomly
         AudioClip clip = ballArray[UnityEngine.Random.Range(0, ballArray.Length)];
 
         //Change the pitch of the sound on a Random Range between 0.1/1
