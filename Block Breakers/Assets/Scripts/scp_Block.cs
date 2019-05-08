@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class scp_Block : MonoBehaviour
 {
-    public bool hasCollidedWithBrick = false;
+    [SerializeField] scp_Ball ball;
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        hasCollidedWithBrick = true;
+    {        
         Destroy(gameObject);
+        if (ball != null)
+        {
+            ball.AudioPlayer();
+        }
+        else return;
     }    
 }

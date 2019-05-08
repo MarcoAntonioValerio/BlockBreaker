@@ -8,19 +8,9 @@ public class scp_Ball : MonoBehaviour
 {
     // Config Parameters
     [SerializeField] scp_PaddleController paddle_1;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    [SerializeField] scp_Block blocks;
+    //[SerializeField] scp_Block blocks;
 
     [SerializeField] AudioClip[] ballArray;
-=======
-    
-    
->>>>>>> parent of 87b28f6... Change in sounds implemented.
-=======
-    
-    
->>>>>>> parent of 87b28f6... Change in sounds implemented.
 
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 15f;
@@ -49,10 +39,6 @@ public class scp_Ball : MonoBehaviour
             BallStartingPosition();
             LaunchOnMouseClick();
         }
-        else if (gameHasStarted)
-        {
-            CollideWithBricks();
-        }
         trailMethod();
     }
 
@@ -70,45 +56,22 @@ public class scp_Ball : MonoBehaviour
         Vector2 paddlePos = new Vector2(paddle_1.transform.position.x, paddle_1.transform.position.y);
         transform.position = paddlePos + paddleToBallVector;
     }
-
-    private void CollideWithBricks()
+    
+    
+    public void AudioPlayer()
     {
-        Debug.Log("CollideWithBricks() is firing");
-        if (blocks.hasCollidedWithBrick == true)
-        {
-            AudioPlayer();
-        }
-        hasCollidedWithBrick = false;
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        hasCollidedWithBrick = false;
-    }
-<<<<<<< HEAD
-=======
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        hasCollidedWithBrick = false;
-    }
->>>>>>> parent of 87b28f6... Change in sounds implemented.
-    private void AudioPlayer()
-    {
+        Debug.Log("AudioPlayer() is firing.");
         //Get the AudioSource
         audioSource = GetComponent<AudioSource>();
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         //Switch between clips randomly
         AudioClip clip = ballArray[UnityEngine.Random.Range(0, ballArray.Length)];
 
-=======
->>>>>>> parent of 87b28f6... Change in sounds implemented.
-=======
->>>>>>> parent of 87b28f6... Change in sounds implemented.
         //Change the pitch of the sound on a Random Range between 0.1/1
         audioSource.pitch = (UnityEngine.Random.Range(0.1f, 1f));
+
         //Play the sounds
-        audioSource.Play();
+        audioSource.PlayOneShot(clip);
     }
 
     void trailMethod()
