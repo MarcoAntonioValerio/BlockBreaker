@@ -18,6 +18,7 @@ public class scp_Ball : MonoBehaviour
     Vector2 paddleToBallVector;
     bool gameHasStarted = false;
     private AudioSource audioSource;
+    private TrailRenderer trail;
     public bool hasCollidedWithBrick = false;
     
 
@@ -34,8 +35,8 @@ public class scp_Ball : MonoBehaviour
         {
             BallStartingPosition();
             LaunchOnMouseClick();
-        }       
-        
+        }
+        trailMethod();
     }
 
     private void LaunchOnMouseClick()
@@ -58,7 +59,8 @@ public class scp_Ball : MonoBehaviour
         if (gameHasStarted)
         {
             hasCollidedWithBrick = true;
-            AudioPlayer();            
+            AudioPlayer();
+            
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -75,5 +77,17 @@ public class scp_Ball : MonoBehaviour
         audioSource.Play();
     }
 
+    void trailMethod()
+    {
+        trail = GetComponent<TrailRenderer>();
+        if (!gameHasStarted)
+        {
+            trail.enabled = false;
+        }
+        else if (gameHasStarted)
+        {
+            trail.enabled = true;
+        }
+    }
 
 }
