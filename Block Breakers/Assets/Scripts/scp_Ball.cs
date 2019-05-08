@@ -9,9 +9,14 @@ public class scp_Ball : MonoBehaviour
     // Config Parameters
     [SerializeField] scp_PaddleController paddle_1;
 <<<<<<< HEAD
+<<<<<<< HEAD
     [SerializeField] scp_Block blocks;
 
     [SerializeField] AudioClip[] ballArray;
+=======
+    
+    
+>>>>>>> parent of 87b28f6... Change in sounds implemented.
 =======
     
     
@@ -79,15 +84,25 @@ public class scp_Ball : MonoBehaviour
     {
         hasCollidedWithBrick = false;
     }
+<<<<<<< HEAD
+=======
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        hasCollidedWithBrick = false;
+    }
+>>>>>>> parent of 87b28f6... Change in sounds implemented.
     private void AudioPlayer()
     {
         //Get the AudioSource
         audioSource = GetComponent<AudioSource>();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         //Switch between clips randomly
         AudioClip clip = ballArray[UnityEngine.Random.Range(0, ballArray.Length)];
 
+=======
+>>>>>>> parent of 87b28f6... Change in sounds implemented.
 =======
 >>>>>>> parent of 87b28f6... Change in sounds implemented.
         //Change the pitch of the sound on a Random Range between 0.1/1
