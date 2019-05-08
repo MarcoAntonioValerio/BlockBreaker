@@ -8,9 +8,7 @@ public class scp_Ball : MonoBehaviour
 {
     // Config Parameters
     [SerializeField] scp_PaddleController paddle_1;
-    
-    
-
+    [SerializeField] AudioClip[] ballArray;
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 15f;
 
@@ -63,21 +61,23 @@ public class scp_Ball : MonoBehaviour
             
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        hasCollidedWithBrick = false;
-    }
+    
     private void AudioPlayer()
     {
         //Get the AudioSource
         audioSource = GetComponent<AudioSource>();
+
+        //GetClips
+        AudioClip clip = ballArray[UnityEngine.Random.Range(0, ballArray.Length)];
+
         //Change the pitch of the sound on a Random Range between 0.1/1
         audioSource.pitch = (UnityEngine.Random.Range(0.1f, 1f));
+
         //Play the sounds
-        audioSource.Play();
+        audioSource.PlayOneShot(clip);
     }
 
-    void trailMethod()
+    private void trailMethod()
     {
         trail = GetComponent<TrailRenderer>();
         if (!gameHasStarted)
