@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class scp_GameManager : MonoBehaviour
 {
-    //Tiago is here
+    
     //States
     [SerializeField] scp_SceneLoader loader;
-    
+    [SerializeField] scp_Block block;
 
     //Config Parameters
     public int blocksToWin;
     public int totalScore = 0;
     [Range(0.1f,10f)][SerializeField] float gameSpeed = 1f;
+
+
+
+    private void Awake()
+    {
+        
+        int managerObjectsCount = FindObjectsOfType<scp_GameManager>().Length;
+        if (managerObjectsCount > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            //block.AddBlockToTotal();
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
 
     // Start is called before the first frame update

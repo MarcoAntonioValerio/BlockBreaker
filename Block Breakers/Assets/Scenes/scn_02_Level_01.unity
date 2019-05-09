@@ -2205,6 +2205,18 @@ PrefabInstance:
       objectReference: {fileID: 183229310}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27466d50f757bb440b027acef9f57b0b, type: 3}
+--- !u!114 &1751613142 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7250300198882357401, guid: 27466d50f757bb440b027acef9f57b0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7250300196834726646}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5bcdc9e9f805f4488cb317f9e0b0d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1783460361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2999,15 +3011,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6832112731301548344, guid: de045a52b2495844ca4994f981292f28,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3798536185485760276, guid: de045a52b2495844ca4994f981292f28,
         type: 3}
       propertyPath: m_Name
       value: GameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832112731301548344, guid: de045a52b2495844ca4994f981292f28,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3798536185485760272, guid: de045a52b2495844ca4994f981292f28,
         type: 3}
@@ -3128,6 +3140,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: man_GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5103116027475318856, guid: 328d86a3f868d12419427aee5a8b98ee,
+        type: 3}
+      propertyPath: loader
+      value: 
+      objectReference: {fileID: 128634199591263768}
+    - target: {fileID: 5103116027475318856, guid: 328d86a3f868d12419427aee5a8b98ee,
+        type: 3}
+      propertyPath: block
+      value: 
+      objectReference: {fileID: 1751613142}
     - target: {fileID: 5103116027475318857, guid: 328d86a3f868d12419427aee5a8b98ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3183,11 +3205,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5103116027475318856, guid: 328d86a3f868d12419427aee5a8b98ee,
-        type: 3}
-      propertyPath: loader
-      value: 
-      objectReference: {fileID: 128634199591263768}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 328d86a3f868d12419427aee5a8b98ee, type: 3}
 --- !u!1001 &7250300196834726646
