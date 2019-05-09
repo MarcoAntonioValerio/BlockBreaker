@@ -33,6 +33,6 @@ public class scp_Block : MonoBehaviour
         //Destroy the brick on collision
         Destroy(gameObject);
         gameManager.blocksToWin--;
-        gameManager.totalScore = gameManager.totalScore + destroyedBlockPoints;
+        gameManager.totalScore += destroyedBlockPoints;
     }    
 }
