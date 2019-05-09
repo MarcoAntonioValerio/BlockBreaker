@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class scp_GameManager : MonoBehaviour
 {
+    //Tiago is here
     //States
     [SerializeField] scp_SceneLoader loader;
     [SerializeField] scp_Block blocks;
