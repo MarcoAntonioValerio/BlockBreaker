@@ -6,6 +6,7 @@ public class scp_GameManager : MonoBehaviour
 {
     //States
     [SerializeField] scp_SceneLoader loader;
+    [SerializeField] scp_Block blocks;
     
 
     //Config Parameters
@@ -13,6 +14,11 @@ public class scp_GameManager : MonoBehaviour
     public int totalScore = 0;
     [Range(0.1f,10f)][SerializeField] float gameSpeed = 1f;
 
+    private void Awake()
+    {
+        GameManagerSingleton();
+        blocks.AddBlocksTogether();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -40,5 +46,15 @@ public class scp_GameManager : MonoBehaviour
     void SpeedOfTheGame()
     {
         Time.timeScale = gameSpeed;
+    }
+
+    void GameManagerSingleton()
+    {
+        int gameManagerCount = FindObjectsOfType<scp_GameManager>().Length;
+        if (gameManagerCount > 1)
+        {
+            Destroy(gameObject);
+        }
+        else DontDestroyOnLoad(gameObject);
     }
 }
