@@ -8,7 +8,7 @@ public class scp_Ball : MonoBehaviour
 {
     // Config Parameters
     [SerializeField] scp_PaddleController paddle_1;
-    //[SerializeField] scp_Block blocks;
+    
 
     [SerializeField] AudioClip[] ballArray;
 
@@ -22,7 +22,7 @@ public class scp_Ball : MonoBehaviour
     private AudioSource audioSource;
     private TrailRenderer trail;
 
-    public bool hasCollidedWithBrick = false;
+    
     
 
     // Start is called before the first frame update
