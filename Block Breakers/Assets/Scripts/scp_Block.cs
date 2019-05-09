@@ -7,10 +7,13 @@ public class scp_Block : MonoBehaviour
     [SerializeField] scp_Ball ball;
     [SerializeField] scp_GameManager gameManager;
 
+    //On awake, blocksToWin is incremented by one on each block.
     private void Awake()
     {
         gameManager.blocksToWin++;
     }
+
+    //Audio starts on collision, the GameObject is destroyed, 1 is subtracted from blocksToWin.
     private void OnCollisionEnter2D(Collision2D collision)
     {
         

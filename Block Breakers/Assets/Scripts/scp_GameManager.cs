@@ -9,8 +9,8 @@ public class scp_GameManager : MonoBehaviour
 
 
     //Config Parameters
-    public int blocksToWin = 20;
-
+    public int blocksToWin;
+    [Range(0.1f,10f)][SerializeField] float gameSpeed = 1f;
 
 
     // Start is called before the first frame update
@@ -23,13 +23,19 @@ public class scp_GameManager : MonoBehaviour
     void Update()
     {
         youWin();
+        SpeedOfTheGame();
     }
 
     private void youWin()
     {
         if (blocksToWin == 0)
-        {
+        {            
             loader.LoadNextScene();
         }
+    }
+
+    void SpeedOfTheGame()
+    {
+        Time.timeScale = gameSpeed;
     }
 }
