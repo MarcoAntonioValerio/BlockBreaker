@@ -7,10 +7,16 @@ public class scp_Block : MonoBehaviour
     [SerializeField] scp_Ball ball;
     [SerializeField] scp_GameManager gameManager;
 
+    public int destroyedBlockPoints = 86;
+
     //On awake, blocksToWin is incremented by one on each block.
     private void Awake()
     {
-        gameManager.blocksToWin++;
+        if (gameManager != null)
+        {
+            gameManager.blocksToWin++;
+        }
+        
     }
 
     //Audio starts on collision, the GameObject is destroyed, 1 is subtracted from blocksToWin.
@@ -26,6 +32,7 @@ public class scp_Block : MonoBehaviour
 
         //Destroy the brick on collision
         Destroy(gameObject);
-        gameManager.blocksToWin--;        
+        gameManager.blocksToWin--;
+        gameManager.totalScore = gameManager.totalScore + destroyedBlockPoints;
     }    
 }

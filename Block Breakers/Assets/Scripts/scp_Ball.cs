@@ -77,14 +77,18 @@ public class scp_Ball : MonoBehaviour
     void trailMethod()
     {
         trail = GetComponent<TrailRenderer>();
-        if (!gameHasStarted)
+        if (trail != null)
         {
-            trail.enabled = false;
+            if (!gameHasStarted)
+            {
+                trail.enabled = false;
+            }
+            else if (gameHasStarted)
+            {
+                trail.enabled = true;
+            }
         }
-        else if (gameHasStarted)
-        {
-            trail.enabled = true;
-        }
+        
     }
 
 }

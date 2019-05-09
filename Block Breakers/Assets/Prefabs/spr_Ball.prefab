@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8968794790770273918}
   - component: {fileID: 8968794790770273919}
   - component: {fileID: 8968794790770273889}
-  - component: {fileID: 8968794790770273888}
   - component: {fileID: 1198325131}
   m_Layer: 0
   m_Name: spr_Ball
@@ -134,21 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddle_1: {fileID: 0}
+  ballArray: []
   xPush: 2
-  yPush: 15
---- !u!114 &8968794790770273888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8968794790770273914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a32beaf4a8804479657447969a6e0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OutputBox: {fileID: 0}
+  yPush: 10
 --- !u!82 &1198325131
 AudioSource:
   m_ObjectHideFlags: 0

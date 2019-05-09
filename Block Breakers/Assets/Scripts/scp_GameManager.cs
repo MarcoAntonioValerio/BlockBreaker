@@ -6,10 +6,11 @@ public class scp_GameManager : MonoBehaviour
 {
     //States
     [SerializeField] scp_SceneLoader loader;
-
+    
 
     //Config Parameters
     public int blocksToWin;
+    public int totalScore = 0;
     [Range(0.1f,10f)][SerializeField] float gameSpeed = 1f;
 
 
@@ -24,6 +25,7 @@ public class scp_GameManager : MonoBehaviour
     {
         youWin();
         SpeedOfTheGame();
+        Debug.Log(totalScore);
     }
 
     private void youWin()
@@ -31,6 +33,7 @@ public class scp_GameManager : MonoBehaviour
         if (blocksToWin == 0)
         {            
             loader.LoadNextScene();
+            gameSpeed = 1f;
         }
     }
 
