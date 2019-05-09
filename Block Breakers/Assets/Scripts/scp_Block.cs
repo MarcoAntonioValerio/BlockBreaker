@@ -12,7 +12,10 @@ public class scp_Block : MonoBehaviour
     //On awake, blocksToWin is incremented by one on each block.
     private void Awake()
     {
-        AddBlocksTogether();
+        if (gameManager != null)
+        {
+            gameManager.blocksToWin++;
+        }
         
     }
 
@@ -31,13 +34,5 @@ public class scp_Block : MonoBehaviour
         Destroy(gameObject);
         gameManager.blocksToWin--;
         gameManager.totalScore += destroyedBlockPoints;
-    }
-
-    public void AddBlocksTogether()
-    {
-        if (gameManager != null)
-        {
-            gameManager.blocksToWin++;
-        }
-    }
+    }    
 }
