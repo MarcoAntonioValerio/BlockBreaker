@@ -73,5 +73,6 @@ public class scp_Block : MonoBehaviour
     private void TriggerSparksVFX()
     {
         GameObject sparkle = Instantiate(sparklesVFX, transform.position, transform.rotation);
+        Destroy(sparkle, 1f);
     }
 }
