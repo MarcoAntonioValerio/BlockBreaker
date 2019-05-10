@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class scp_Block : MonoBehaviour
 {
+    //Configuration parameters
+    [SerializeField] int maxHits;
+    [SerializeField] GameObject sparklesVFX;
+
+    //Cache Reference
     [SerializeField] scp_Ball ball;
     [SerializeField] scp_GameManager gameManager;
     [SerializeField] scp_Level level;
+
+    //States
+    [SerializeField] int timesHit;  //Only serialized for debug.
+
 
     public int destroyedBlockPoints = 86;
 
@@ -37,8 +46,13 @@ public class scp_Block : MonoBehaviour
         {
             //Destroy the brick on collision
             Destroy(gameObject);
+
+            //Vfx Sparkles starts
+            TriggerSparksVFX();
+
             //Subtract one brick
             level.blocksToWin--;
+
             //Add the points of the destroyed brick
             gameManager.totalScore += destroyedBlockPoints;
         }
@@ -54,5 +68,10 @@ public class scp_Block : MonoBehaviour
                 level.blocksToWin++;
             }
         }        
+    }
+
+    private void TriggerSparksVFX()
+    {
+        GameObject sparkle = Instantiate(sparklesVFX, transform.position, transform.rotation);
     }
 }

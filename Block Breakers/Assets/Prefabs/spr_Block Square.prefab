@@ -119,7 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5bcdc9e9f805f4488cb317f9e0b0d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 0}
-  gameManager: {fileID: 0}
-  level: {fileID: 0}
+  maxHits: 0
+  sparklesVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
+  ball: {fileID: 8968794790770273889, guid: cea7176ab405b53408fe81c12060e7c7, type: 3}
+  gameManager: {fileID: 5103116027475318856, guid: 328d86a3f868d12419427aee5a8b98ee,
+    type: 3}
+  level: {fileID: 292311441887958092, guid: 87deb879775cca54782b8e7dc9b63da2, type: 3}
+  timesHit: 0
   destroyedBlockPoints: 86
