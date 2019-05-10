@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class scp_SceneLoader : MonoBehaviour {
+    [SerializeField] scp_GameManager gameManager;
 
 	public void LoadNextScene()
     {
@@ -14,6 +15,8 @@ public class scp_SceneLoader : MonoBehaviour {
     public void LoadStartScene()
     {
         SceneManager.LoadScene(0);
+        gameManager = FindObjectOfType<scp_GameManager>();
+        gameManager.ResetGameScore();
     }
 
     public void QuitGame()

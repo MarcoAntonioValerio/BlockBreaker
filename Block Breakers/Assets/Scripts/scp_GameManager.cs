@@ -10,7 +10,7 @@ public class scp_GameManager : MonoBehaviour
     //[SerializeField] scp_Block block;
 
     //Config Parameters    
-    public int totalScore = 0;    
+    public int totalScore;    
     [Range(0.1f,10f)]public float gameSpeed = 1f;
 
 
@@ -55,5 +55,9 @@ public class scp_GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }        
     }
-    
+
+    public void ResetGameScore()
+    {
+        totalScore = 0;
+    }
 }
