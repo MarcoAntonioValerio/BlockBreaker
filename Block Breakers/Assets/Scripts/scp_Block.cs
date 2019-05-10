@@ -13,7 +13,7 @@ public class scp_Block : MonoBehaviour
     //On awake, blocksToWin is incremented by one on each block.
     private void Awake()
     {
-        AddBlockToTotal();
+        AddBlockToTotalIfBreakable();
         gameManager = FindObjectOfType<scp_GameManager>();
     }
 
@@ -33,19 +33,26 @@ public class scp_Block : MonoBehaviour
         }
         else return;
 
-        //Destroy the brick on collision
-        Destroy(gameObject);
-        //Subtract one brick
-        level.blocksToWin--;
-        //Add the points of the destroyed brick
-        gameManager.totalScore += destroyedBlockPoints;
+        if (tag == "Breakable")
+        {
+            //Destroy the brick on collision
+            Destroy(gameObject);
+            //Subtract one brick
+            level.blocksToWin--;
+            //Add the points of the destroyed brick
+            gameManager.totalScore += destroyedBlockPoints;
+        }
+        
     }
 
-    public void AddBlockToTotal()
+    public void AddBlockToTotalIfBreakable()
     {
-        if (gameManager != null)
+        if (tag == "Breakable")
         {
-            level.blocksToWin++;            
-        }
+            if (gameManager != null)
+            {
+                level.blocksToWin++;
+            }
+        }        
     }
 }
