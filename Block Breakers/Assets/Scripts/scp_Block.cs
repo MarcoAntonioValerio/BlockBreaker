@@ -6,6 +6,7 @@ public class scp_Block : MonoBehaviour
 {
     [SerializeField] scp_Ball ball;
     [SerializeField] scp_GameManager gameManager;
+    [SerializeField] scp_Level level;
 
     public int destroyedBlockPoints = 86;
 
@@ -13,14 +14,19 @@ public class scp_Block : MonoBehaviour
     private void Awake()
     {
         AddBlockToTotal();
+        gameManager = FindObjectOfType<scp_GameManager>();
+    }
+
+    private void Update()
+    {
         
     }
 
-    //Audio starts on collision, the GameObject is destroyed, 1 is subtracted from blocksToWin.
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
-        //Check if script is on, if not return
+        //Check if script is on, if yes play the Audio, if not return.
         if (ball != null)
         {
             ball.AudioPlayer();
@@ -29,7 +35,9 @@ public class scp_Block : MonoBehaviour
 
         //Destroy the brick on collision
         Destroy(gameObject);
-        gameManager.blocksToWin--;
+        //Subtract one brick
+        level.blocksToWin--;
+        //Add the points of the destroyed brick
         gameManager.totalScore += destroyedBlockPoints;
     }
 
@@ -37,7 +45,7 @@ public class scp_Block : MonoBehaviour
     {
         if (gameManager != null)
         {
-            gameManager.blocksToWin++;
+            level.blocksToWin++;            
         }
     }
 }

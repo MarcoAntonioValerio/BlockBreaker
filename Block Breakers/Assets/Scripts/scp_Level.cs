@@ -1,28 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class scp_UiManager : MonoBehaviour
+public class scp_Level : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI scoreTextBox;
+    [SerializeField] scp_SceneLoader loader;
     [SerializeField] scp_GameManager gameManager;
+
+    public int blocksToWin;
+
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<scp_GameManager>();
-        ScoreBox();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ScoreBox(); 
+        youWin();
     }
 
-    void ScoreBox()
-    {        
-        scoreTextBox.text = "Score: " + gameManager.totalScore.ToString();
+    private void youWin()
+    {
+        if (blocksToWin == 0)
+        {
+            loader.LoadNextScene();
+            gameManager.gameSpeed = 1f;
+
+        }
     }
 }

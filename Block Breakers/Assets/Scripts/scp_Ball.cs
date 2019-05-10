@@ -36,6 +36,7 @@ public class scp_Ball : MonoBehaviour
     {
         if (!gameHasStarted)
         {
+            
             BallStartingPosition();
             LaunchOnMouseClick();
         }
