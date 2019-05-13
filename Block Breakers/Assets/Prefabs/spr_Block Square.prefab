@@ -121,6 +121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHits: 0
   sparklesVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
+  hitSprites:
+  - {fileID: 21300000, guid: d0463b43721e64848b8f7d9755ac9f16, type: 3}
+  - {fileID: 21300000, guid: 8c7bb8ff176f26040a6a7619a87e6e9a, type: 3}
   ball: {fileID: 8968794790770273889, guid: cea7176ab405b53408fe81c12060e7c7, type: 3}
   gameManager: {fileID: 5103116027475318856, guid: 328d86a3f868d12419427aee5a8b98ee,
     type: 3}

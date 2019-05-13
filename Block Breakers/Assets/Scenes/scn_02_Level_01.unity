@@ -505,6 +505,11 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 227144644}
+    - target: {fileID: 7250300198882357401, guid: 27466d50f757bb440b027acef9f57b0b,
+        type: 3}
+      propertyPath: maxHits
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27466d50f757bb440b027acef9f57b0b, type: 3}
 --- !u!114 &535448327 stripped
@@ -1106,6 +1111,11 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 227144644}
+    - target: {fileID: 7250300198882357401, guid: 27466d50f757bb440b027acef9f57b0b,
+        type: 3}
+      propertyPath: maxHits
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27466d50f757bb440b027acef9f57b0b, type: 3}
 --- !u!4 &819140401 stripped
@@ -1222,6 +1232,11 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 227144644}
+    - target: {fileID: 7250300198882357401, guid: 27466d50f757bb440b027acef9f57b0b,
+        type: 3}
+      propertyPath: maxHits
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27466d50f757bb440b027acef9f57b0b, type: 3}
 --- !u!4 &1046738330 stripped
@@ -1413,6 +1428,11 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 227144644}
+    - target: {fileID: 7250300198882357401, guid: 27466d50f757bb440b027acef9f57b0b,
+        type: 3}
+      propertyPath: maxHits
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27466d50f757bb440b027acef9f57b0b, type: 3}
 --- !u!1001 &1126169526
@@ -1693,6 +1713,11 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 227144644}
+    - target: {fileID: 7250300198882357401, guid: 27466d50f757bb440b027acef9f57b0b,
+        type: 3}
+      propertyPath: maxHits
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27466d50f757bb440b027acef9f57b0b, type: 3}
 --- !u!1001 &1243815210
@@ -1988,6 +2013,11 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 227144644}
+    - target: {fileID: 7250300198882357401, guid: 27466d50f757bb440b027acef9f57b0b,
+        type: 3}
+      propertyPath: maxHits
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27466d50f757bb440b027acef9f57b0b, type: 3}
 --- !u!1001 &1316442465
@@ -3077,6 +3107,11 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 227144644}
+    - target: {fileID: 7250300198882357401, guid: 27466d50f757bb440b027acef9f57b0b,
+        type: 3}
+      propertyPath: maxHits
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27466d50f757bb440b027acef9f57b0b, type: 3}
 --- !u!4 &2046369914 stripped
@@ -3309,6 +3344,11 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 227144644}
+    - target: {fileID: 7250300198882357401, guid: 27466d50f757bb440b027acef9f57b0b,
+        type: 3}
+      propertyPath: maxHits
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27466d50f757bb440b027acef9f57b0b, type: 3}
 --- !u!1 &2141953376
@@ -3436,6 +3476,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: man_Level
       objectReference: {fileID: 0}
+    - target: {fileID: 292311441887958092, guid: 87deb879775cca54782b8e7dc9b63da2,
+        type: 3}
+      propertyPath: loader
+      value: 
+      objectReference: {fileID: 128634199591263768}
+    - target: {fileID: 292311441887958092, guid: 87deb879775cca54782b8e7dc9b63da2,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 183229310}
     - target: {fileID: 292311441887958093, guid: 87deb879775cca54782b8e7dc9b63da2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3491,16 +3541,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 292311441887958092, guid: 87deb879775cca54782b8e7dc9b63da2,
-        type: 3}
-      propertyPath: loader
-      value: 
-      objectReference: {fileID: 128634199591263768}
-    - target: {fileID: 292311441887958092, guid: 87deb879775cca54782b8e7dc9b63da2,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 183229310}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87deb879775cca54782b8e7dc9b63da2, type: 3}
 --- !u!1001 &1537816228020953242

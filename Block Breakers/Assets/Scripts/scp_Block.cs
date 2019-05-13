@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class scp_Block : MonoBehaviour
     //Configuration parameters
     [SerializeField] int maxHits;
     [SerializeField] GameObject sparklesVFX;
+    [SerializeField] Sprite[] hitSprites;
 
     //Cache Reference
     [SerializeField] scp_Ball ball;
@@ -15,7 +17,9 @@ public class scp_Block : MonoBehaviour
 
     //States
     [SerializeField] int timesHit;  //Only serialized for debug.
-
+    private int firstDamage = 1;
+    private int secondDamage = 2;
+    private int[] damageCounter;
 
     public int destroyedBlockPoints = 86;
 
@@ -44,19 +48,54 @@ public class scp_Block : MonoBehaviour
 
         if (tag == "Breakable")
         {
-            //Destroy the brick on collision
-            Destroy(gameObject);
+            HandleHit();
 
-            //Vfx Sparkles starts
-            TriggerSparksVFX();
-
-            //Subtract one brick
-            level.blocksToWin--;
-
-            //Add the points of the destroyed brick
-            gameManager.totalScore += destroyedBlockPoints;
         }
+
+    }
+
+    private void HandleHit()
+    {
+        //Adds one to times hit
+        timesHit++;
+
+        if (timesHit >= maxHits)
+        {
+            DestroyTheBlock();
+        }
+        else
+        {
+            showNextHitSprites();
+        }
+    }
+
+    private void showNextHitSprites()
+    {
         
+        if (timesHit == firstDamage)
+        {
+            GetComponent<SpriteRenderer>().sprite = hitSprites[0];
+        }
+        if (timesHit == secondDamage)
+        {
+            GetComponent<SpriteRenderer>().sprite = hitSprites[1];
+        }
+
+    }
+
+    private void DestroyTheBlock()
+    {
+        //Destroy the brick on collision
+        Destroy(gameObject);
+
+        //Vfx Sparkles starts
+        TriggerSparksVFX();
+
+        //Subtract one brick
+        level.blocksToWin--;
+
+        //Add the points of the destroyed brick
+        gameManager.totalScore += destroyedBlockPoints;
     }
 
     public void AddBlockToTotalIfBreakable()
