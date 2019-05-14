@@ -72,13 +72,19 @@ public class scp_Block : MonoBehaviour
     private void showNextHitSprites()
     {
         
-        if (timesHit == firstDamage)
+        switch (timesHit)
         {
-            GetComponent<SpriteRenderer>().sprite = hitSprites[0];
-        }
-        if (timesHit == secondDamage)
-        {
-            GetComponent<SpriteRenderer>().sprite = hitSprites[1];
+            case 1:
+                GetComponent<SpriteRenderer>().sprite = hitSprites[0];
+                break;
+
+            case 2:
+                GetComponent<SpriteRenderer>().sprite = hitSprites[1];
+                break;
+
+            default:
+                Debug.Log("Default case triggered");
+                break;
         }
 
     }
