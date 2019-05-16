@@ -133,7 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddle_1: {fileID: 0}
-  ballArray: []
+  ballArray:
+  - {fileID: 8300000, guid: 04725fb84d7290944aeae61bd4d7ad78, type: 3}
+  randomFactor: 0.2
   xPush: 2
   yPush: 10
 --- !u!82 &1198325131

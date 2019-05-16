@@ -12,6 +12,7 @@ public class scp_Ball : MonoBehaviour
 
     [SerializeField] AudioClip[] ballArray;
 
+    [SerializeField] float randomFactor = 0.2f;
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 15f;
     
@@ -21,6 +22,7 @@ public class scp_Ball : MonoBehaviour
     private bool gameHasStarted = false;
     private AudioSource audioSource;
     private TrailRenderer trail;
+    private Rigidbody2D ballBody;
 
     
     
@@ -29,6 +31,7 @@ public class scp_Ball : MonoBehaviour
     void Start()
     {
         paddleToBallVector = transform.position - paddle_1.transform.position;
+        ballBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -48,7 +51,7 @@ public class scp_Ball : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {            
             gameHasStarted = true;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(xPush, yPush);            
+            ballBody.velocity = new Vector2(xPush, yPush);            
         }
     }
 
@@ -92,4 +95,23 @@ public class scp_Ball : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        TrajectoryTweaker();
+        if (gameHasStarted)
+        {
+            AudioPlayer();
+        } 
+    }
+
+    private void TrajectoryTweaker()
+    {
+        Vector2 velocityTweak = new Vector2
+                        (UnityEngine.Random.Range(0f, randomFactor),
+                         UnityEngine.Random.Range(0f, randomFactor));
+        if (gameHasStarted)
+        {
+            ballBody.velocity += velocityTweak;
+        }
+    }
 }
